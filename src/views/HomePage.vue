@@ -4,9 +4,9 @@
   </div>
 <div class="bg">
   <div class="container-sm">
-    <div class="d-flex justify-content-center flex-wrap align-items-center">
+    <div class="d-flex justify-content-center flex-wrap align-items-stretch">
         <div  v-for="(item, index) in beer" :key="item.uid" class="card" style="width: 18rem;">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <div class="recomended" v-if="index===recomenBeer"><div class="d32"></div></div>
               <h5 class="card-title">{{item.name}}</h5>
               <h6 class="card-subtitle mb-2 text-muted">Alc - {{item.alcohol}}</h6>
@@ -57,6 +57,9 @@ background: #D7695A;
 position: relative;
 
 
+}
+.card-link {
+  margin-top: auto;
 }
 .d32:before, 
 .d32:after {

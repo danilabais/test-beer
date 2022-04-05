@@ -2,7 +2,7 @@
 <div class="bg">
   <div class="container-sm " v-if="user && beer">
     <div class="height-fix">
-    <img :src="user.avatar"  alt="avatar"  class="rounded-circle mx-auto d-block img-fluid avatar border border-primary">
+    <img :src="user.avatar" @error="error"   alt="avatar"  class="rounded-circle mx-auto d-block img-fluid avatar border border-primary size">
     </div>
     <hr>
     <h2 class="text-center">{{user.first_name+' '+user.last_name}}</h2>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import pic from '@/assets/robot.png'
 export default {
   computed: {
     user(){
@@ -38,6 +39,9 @@ export default {
   methods: {
     changeUser() {
       this.$store.dispatch('fetchUser')
+    },
+    error() {
+      this.user.avatar = pic
     }
   }
 }
@@ -55,5 +59,10 @@ export default {
 }
 p {
   font-size: 1.3rem;
+}
+.size {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
 }
 </style>

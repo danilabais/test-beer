@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from "axios";
+import createPersistedState from "vuex-persistedstate";
 
 export default createStore({
   state: {
@@ -7,6 +8,7 @@ export default createStore({
     beer:null,
     recomendedBeer:null,
   },
+  plugins: [createPersistedState()],
   getters: {
   },
   mutations: {
@@ -35,7 +37,6 @@ export default createStore({
        }
        dispatch('recomendedBeer')
        commit("STATE_USER",user)
-       console.log(user)
     },
     async fetchBeer({dispatch,commit}){
       let beer = null
@@ -51,12 +52,12 @@ export default createStore({
       }
       commit("STATE_BEER",beer)
       dispatch('recomendedBeer')
-      console.log(beer)
      },
      recomendedBeer({state,commit}){
         let random = Math.floor(Math.random()*9)
         commit("STATE_RECOMENDED_BEER",random)
-     }  
+     },
+     
   },
  
   getters: {

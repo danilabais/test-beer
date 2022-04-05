@@ -11,11 +11,16 @@ export default {
   },
   methods: {
     setUser(){
-      this.$store.dispatch('fetchUser')
+      if (this.beer!==undefined) {
+        this.$store.dispatch('fetchUser')
+          } 
     },
      setBeer(){
-      this.$store.dispatch('fetchBeer')
-    }
+          if (this.beer!==undefined) {
+            this.$store.dispatch('fetchBeer')
+          } 
+    },
+    
   },
   created(){
     this.setUser(),
