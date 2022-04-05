@@ -17,8 +17,8 @@ export default {
       this.$store.dispatch('fetchBeer')
     }
   },
-  mounted(){
-    this.setUser()
+  created(){
+    this.setUser(),
     this.setBeer()
   }
 }

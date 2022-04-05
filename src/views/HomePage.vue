@@ -9,9 +9,9 @@
             <div class="card-body">
               <div class="recomended" v-if="index===recomenBeer"><div class="d32"></div></div>
               <h5 class="card-title">{{item.name}}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{item.alcohol}}</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Подробнее</a>
+              <h6 class="card-subtitle mb-2 text-muted">Alc - {{item.alcohol}}</h6>
+              <p class="card-text">{{`${item.style} - ${item.brand}. ${item.malts}`}}</p>
+              <router-link  :to="{ path: `/beer/${item.id}`}"   class="card-link">Подробнее</router-link>
             </div>
           </div>
     </div>

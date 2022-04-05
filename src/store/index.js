@@ -41,7 +41,7 @@ export default createStore({
       let beer = null
        try {
         const response = await axios.get(
-          `https://random-data-api.com/api/beer/random_beer?size=10`
+          `https://random-data-api.com/api/beer/random_beer?size=9`
         );
         beer = response.data
       } catch (e) {
@@ -54,7 +54,7 @@ export default createStore({
       console.log(beer)
      },
      recomendedBeer({state,commit}){
-        let random = Math.floor(Math.random()*state.beer.length)
+        let random = Math.floor(Math.random()*9)
         commit("STATE_RECOMENDED_BEER",random)
      }  
   },
