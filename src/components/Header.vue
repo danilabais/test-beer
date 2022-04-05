@@ -10,7 +10,6 @@
       <ul class="nav nav-pills">
         <router-link to="/"  active-class="active " class="nav-item nav-link">Бар</router-link>
         <router-link to="/profile"  active-class=" active" class="nav-item nav-link">Мой профиль</router-link>
-        
       </ul>
 
     </header>

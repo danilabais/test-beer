@@ -1,6 +1,8 @@
 <template>
   <Header/>
-  <router-view/>
+  <transition name="fade">
+    <router-view/>
+  </transition>
 </template>
 
 <script>
@@ -11,14 +13,10 @@ export default {
   },
   methods: {
     setUser(){
-      if (this.beer!==undefined) {
         this.$store.dispatch('fetchUser')
-          } 
     },
      setBeer(){
-          if (this.beer!==undefined) {
-            this.$store.dispatch('fetchBeer')
-          } 
+       this.$store.dispatch('fetchBeer')
     },
     
   },
@@ -33,5 +31,13 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700&family=Permanent+Marker&display=swap');
 * {
   font-family: 'Permanent Marker', cursive;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: linear all 0.3s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

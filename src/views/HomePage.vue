@@ -55,8 +55,6 @@ height: 60px;
 margin: 10px;
 background: #D7695A;
 position: relative;
-
-
 }
 .card-link {
   margin-top: auto;

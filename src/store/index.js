@@ -8,7 +8,6 @@ export default createStore({
     beer:null,
     recomendedBeer:null,
   },
-  plugins: [createPersistedState()],
   getters: {
   },
   mutations: {
