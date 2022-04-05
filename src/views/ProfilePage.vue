@@ -1,6 +1,6 @@
 <template>
 <div class="bg">
-  <div class="container-sm " v-if="user">
+  <div class="container-sm " v-if="user && beer">
     <div class="height-fix">
     <img :src="user.avatar"  alt="avatar"  class="rounded-circle mx-auto d-block img-fluid avatar border border-primary">
     </div>
@@ -10,7 +10,7 @@
     <h5 class="text-center">{{user.employment.title}}</h5>
     <hr>
     <p>Полных лет: {{ age - user.date_of_birth.slice(0, 4)}}</p>
-    <p>Рекомендованное пиво сегодня: </p>
+    <p>Рекомендованное пиво сегодня:  {{beer[recomenBeer].name}}</p>
   </div>
   <div class="col text-center">
     <button type="button" class="btn btn-warning btn-lg text-center mt-4" v-on:click="changeUser">Сменить пользователя?</button>
@@ -27,6 +27,12 @@ export default {
     age(){
       let today = new Date()
       return today.getFullYear()
+    },
+    beer(){
+      return  this.$store.getters.beer
+    },
+    recomenBeer(){
+      return this.$store.getters.recomendedBeer
     }
   },
   methods: {
