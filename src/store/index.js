@@ -21,13 +21,14 @@ export default createStore({
          );
          user = response.data
        } catch (e) {
-         console.log('При первом получении пользователя была ошибка, еще раз будет сделан запрос',e)
+         console.log('При первом получении пользователя была ошибка, запрос будет сделан еще раз',e)
          dispatch("fetchUser")
          
        }
        commit("STATE_USER",user)
        console.log(user)
-    }
+    },
+    
   },
  
   getters: {

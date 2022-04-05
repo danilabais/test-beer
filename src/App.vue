@@ -12,10 +12,14 @@ export default {
   methods: {
     setUser(){
       this.$store.dispatch('fetchUser')
+    },
+     setBeer(){
+      this.$store.dispatch('fetchBeer')
     }
   },
   mounted(){
     this.setUser()
+    this.setBeer()
   }
 }
 </script>
