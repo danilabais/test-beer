@@ -1,3 +1,4 @@
 # test-beer
 https://test-beer-a53ed.web.app/
-Применял vue, vuex, vue-router, api
+Применял vue, vuex, vue-router, api, bootstrap + адаптив
+
